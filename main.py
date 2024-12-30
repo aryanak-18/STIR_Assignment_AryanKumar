@@ -34,9 +34,9 @@ def x():
             return HTTPProxyAuth(self.username, self.password)
 
     options = Options()
-    options.add_argument("--headless")  # Run in headless mode
-    options.add_argument("--no-sandbox")  # Disable sandbox for Docker environments
-    options.add_argument("--disable-dev-shm-usage")
+    # options.add_argument("--headless")  # Run in headless mode
+    # options.add_argument("--no-sandbox")  # Disable sandbox for Docker environments
+    # options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(options=options)
 
@@ -112,3 +112,4 @@ def x():
     print(date_time, ip_address)
 
     collection.insert_one({"trends": names, "date_time": date_time, "ip_address": ip_address})
+    driver.quit()
