@@ -3,7 +3,6 @@ import subprocess
 import pymongo
 from datetime import datetime
 import socket
-from envFile import mongoLink
 import json
 import os
 
