@@ -1,6 +1,8 @@
 # Trending Data Scraper - X
 
-![Alt Text](https://drive.google.com/file/d/1ryEEmh2PrYGlIZFaNIgBmyghnm8kNMgb/view?usp=sharing)
+![HomePage](assets/HomePage.png)
+<br>
+![ResultPage](assets/HomePage.png)
 
 
 
