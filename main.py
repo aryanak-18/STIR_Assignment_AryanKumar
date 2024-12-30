@@ -34,7 +34,9 @@ def x():
             return HTTPProxyAuth(self.username, self.password)
 
     options = Options()
-    options.add_argument('--headless')
+    options.add_argument("--headless")  # Run in headless mode
+    options.add_argument("--no-sandbox")  # Disable sandbox for Docker environments
+    options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(options=options)
 
