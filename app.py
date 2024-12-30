@@ -5,6 +5,9 @@ from datetime import datetime
 import socket
 from envFile import mongoLink
 import json
+import os
+
+mongoLink = os.getenv("MONGOLINK")
 
 app = Flask(__name__)
 

@@ -6,9 +6,11 @@ from datetime import datetime
 from pymongo import MongoClient
 import requests
 from requests.auth import HTTPProxyAuth
-from envFile import mongoLink
-from envFile import username
-from envFile import password
+import os
+
+mongoLink = os.getenv("MONGOLINK")
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
 
 class ProxyConfig:
     def __init__(self):

@@ -2,3 +2,4 @@ envFile.py
 __pycache__
 tempCodeRunnerFile.py
 .vercel
+.env
