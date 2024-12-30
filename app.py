@@ -25,7 +25,7 @@ def home():
 def run_script():
     try:
         # Run the Selenium script
-        subprocess.run(["python", "./selenium_script/main.py"], check=True)
+        subprocess.run(["python", "main.py"], check=True)
         
         # Fetch the latest record from MongoDB
         latest_record = collection.find_one(sort=[("date_time", -1)])
