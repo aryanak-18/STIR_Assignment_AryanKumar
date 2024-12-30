@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Script Result</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: #2563eb;
+        margin-bottom: 1rem;
+      }
+
+      .trends-grid {
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .trend-item {
+        background-color: #f3f4f6;
+        padding: 1rem;
+        border-radius: 6px;
+        border-left: 4px solid #2563eb;
+        margin-bottom: 2px;
+      }
+
+      .info-text {
+        color: #666;
+        font-size: 0.9rem;
+        background-color: #f3f4f6;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+      }
+
+      pre {
+        background-color: #f3f4f6;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 1rem 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .back-link {
+        display: inline-block;
+        background-color: #2563eb;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 1.5rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .back-link:hover {
+        background-color: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Trending Topics</h1>
+      <p>These are the most happening topics as on {{date}} at {{time}}:</p>
+
+      <ul class="trends-grid">
+        {% for trend in trends %}
+        <li class="trend-item">{{ trend }}</li>
+        {% endfor %}
+      </ul>
+
+      <p class="info-text">The IP address used for this query was: {{ ip_address }}</p>
+      <p>The request might get timed out some of the times due to which the value of ip_address is set to "XXX.XXX.X.XXX" or "request timeout".</p>
+
+      <h2>Here’s a JSON extract of this record from the MongoDB:</h2>
+      <pre>{{ json_extract}}</pre>
+
+      <a href="/" class="back-link">Click here to run the query again</a>
+    </div>
+  </body>
+</html>
