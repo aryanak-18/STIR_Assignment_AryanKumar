@@ -4,7 +4,10 @@ import pymongo
 from datetime import datetime
 import socket
 import json
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 mongoLink = os.getenv("MONGOLINK")
 
@@ -25,7 +28,7 @@ def home():
 def run_script():
     try:
         # Run the Selenium script
-        subprocess.run(["python", "main.py"], check=True)
+        subprocess.run(["python", "./main.py"], check=True)
         
         # Fetch the latest record from MongoDB
         latest_record = collection.find_one(sort=[("date_time", -1)])
@@ -40,7 +43,7 @@ def run_script():
         json_extract = latest_record
         
         # Render the HTML with updated data
-        return render_template('result.html', trends=trends, ip_address=ip_address, date=formatted_date, time=formatted_time, json_extract=json_extract)
+        return render_template('./result.html', trends=trends, ip_address=ip_address, date=formatted_date, time=formatted_time, json_extract=json_extract)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

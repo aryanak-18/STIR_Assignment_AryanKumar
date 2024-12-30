@@ -6,11 +6,16 @@ from datetime import datetime
 from pymongo import MongoClient
 import requests
 from requests.auth import HTTPProxyAuth
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 mongoLink = os.getenv("MONGOLINK")
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
+xpassword = os.getenv("XPASSWORD")
 
 class ProxyConfig:
     def __init__(self):
@@ -70,7 +75,7 @@ next_button.click()
 time.sleep(3)
 
 password = driver.find_element("name","password")
-password.send_keys("x@ak18aryan")
+password.send_keys(f"{xpassword}")
 
 login_button = driver.find_element(By.CSS_SELECTOR, '[data-testid="LoginForm_Login_Button"]')
 login_button.click()
@@ -85,6 +90,7 @@ first_trend_name = first_trend.text
 first_five_children = children[3:7]
 names=[]
 names.append(first_trend_name)
+time.sleep(2)
 
 for index, child in enumerate(first_five_children, 1):
     span_el = child.find_elements(By.TAG_NAME, "span")
