@@ -5,6 +5,7 @@ from datetime import datetime
 import socket
 import json
 from dotenv import load_dotenv
+from main import x
 import os
 
 load_dotenv()
@@ -28,7 +29,8 @@ def home():
 def run_script():
     try:
         # Run the Selenium script
-        subprocess.run(["python", "./main.py"], check=True)
+        # subprocess.run(["python", "./main.py"], check=True)
+        x()
         
         # Fetch the latest record from MongoDB
         latest_record = collection.find_one(sort=[("date_time", -1)])
