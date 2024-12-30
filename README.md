@@ -2,7 +2,13 @@
 
 ![HomePage](assets/HomePage.png)
 <br>
-![ResultPage](assets/HomePage.png)
+<br>
+<br>
+![ResultPage](assets/ResultPage.png)
+<br>
+<br>
+<br>
+![Video](assets/STIR_AssignmentVideo.mp4)
 
 
 
